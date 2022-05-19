@@ -3,7 +3,42 @@ guid: f8985fabcfbb6a647ac0ff5aa8abe582
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 0724a0ee7c9061e40a0a89b13de914c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: -3846018093981099296, guid: 6e67896442b2a514eb801ff9aec24191,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 4874126678125670354, guid: 6bea82ab345e34a4aa0ca8cb74b12d5f,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: -1255982633427224767, guid: 6c2ad2a7d0069234d9af8b5f4d35d1f8,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window
+    second: {fileID: 3398073514908505954, guid: 6c2ad2a7d0069234d9af8b5f4d35d1f8,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodWood
+    second: {fileID: -8950558982035169884, guid: 522de890ea432884eac3bddd52222886,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
