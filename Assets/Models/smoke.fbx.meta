@@ -3,7 +3,13 @@ guid: cad80ca30021bd64e81cc89314ff583d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron
+    second: {fileID: 7372942263073986894, guid: cad80ca30021bd64e81cc89314ff583d,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
