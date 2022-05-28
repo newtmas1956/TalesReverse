@@ -121,6 +121,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &225254533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225254536}
+  - component: {fileID: 225254535}
+  - component: {fileID: 225254534}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &225254534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225254533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &225254535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225254533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &225254536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225254533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301033499
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,28 +213,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 301033499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b233098a3a78b9041b8dbff3e4bcd6b1, type: 3}
+  m_Script: {fileID: 11500000, guid: ad8d7c59bbffe0b41b30f73be55647cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 4634708563544977472, guid: cf1abdf5eed6c714c83214189eb478f4,
     type: 3}
   sprites:
-  - {fileID: -8506735889323900786, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 5888589322348927482, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -8246695295650224552, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 8410894248705696185, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 8500952370780790516, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -6226498286090505678, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 312967351301300155, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -1316342616119400027, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 255496866392592140, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -1473846967724845052, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -9115396585928510311, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -9005602716035665715, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: -1718244285865808769, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 2487019900452698373, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 8018089613639400461, guid: b57f1222383c82e40a71c97b851d5e86, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 39ae85b1615e7bb42b8ad1ed78c06866, type: 3}
+  - {fileID: 21300000, guid: ba5f310e5503a0c47afdf1c68abbb3f2, type: 3}
+  - {fileID: 21300000, guid: 7fbd79d745660e54ebe57ca817b51202, type: 3}
+  - {fileID: 21300000, guid: a5dcbe3041eb1dd4b82be92fc4a3030f, type: 3}
+  - {fileID: 21300000, guid: 11bced6f4d130e8409a1da4eb3e6ff54, type: 3}
+  - {fileID: 21300000, guid: a784985aebeccec4ba30964663299c06, type: 3}
+  - {fileID: 21300000, guid: 471f82e61dd46ee46b4b71a3879a8761, type: 3}
+  - {fileID: 21300000, guid: 6833c0af2bcdf174eb58620d6e6535fd, type: 3}
+  - {fileID: 21300000, guid: a50964198b4171f45b3488ef34704037, type: 3}
+  - {fileID: 21300000, guid: e0a57735769ee9448aae0efccecafd7c, type: 3}
+  - {fileID: 21300000, guid: 434a0ca43be1e5b49900a8d650a1a652, type: 3}
+  - {fileID: 21300000, guid: 24836ebcb340fa64aa9bd6032bfe9e81, type: 3}
+  - {fileID: 21300000, guid: 9cec2320ca30b0c4a8ea63ef110e9644, type: 3}
+  - {fileID: 21300000, guid: d538647e6ad7857419826c191ffec992, type: 3}
+  - {fileID: 21300000, guid: 6ff31ca835081284198a592690aa03e7, type: 3}
+  - {fileID: 21300000, guid: 600aeddd9d6b19b468befa8c63926b92, type: 3}
 --- !u!4 &301033501
 Transform:
   m_ObjectHideFlags: 0
@@ -176,8 +242,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301033499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 309.5, y: 196.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -219,7 +285,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -236,7 +302,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 183.64645
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -260,7 +326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 406, y: 201, z: -1224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

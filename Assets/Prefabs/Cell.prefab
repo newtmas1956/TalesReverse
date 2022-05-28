@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8368162721249043144}
   - component: {fileID: 8368162721249043145}
   - component: {fileID: 8368162721249043151}
+  - component: {fileID: 6729123975792703923}
   m_Layer: 5
   m_Name: Cell
   m_TagString: Untagged
@@ -100,6 +101,23 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &6729123975792703923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8368162721249043147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab7cf12e7788c448a25707bcbc639e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  amount: 0
+  isEmpty: 1
+  iconGO: {fileID: 8368162721999466772}
+  itemAmount: {fileID: 8368162721671724267}
 --- !u!1 &8368162721671724181
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.53055555, y: 0.044444446}
   m_AnchorMax: {x: 0.975, y: 0.46666667}
-  m_AnchoredPosition: {x: 0.9685192, y: -1.1952782}
+  m_AnchoredPosition: {x: 0.9685192, y: -1.195282}
   m_SizeDelta: {x: -3.182232, y: 4.3941956}
   m_Pivot: {x: 0.6383836, y: 0.6382783}
 --- !u!222 &8368162721671724266

@@ -12,7 +12,7 @@ public class HealthController : MonoBehaviour
     public int numOfHearts;
     public Image[] hearts;
     public Sprite fullHeart;
-    public Sprite emptyHeart;
+  //  public Sprite emptyHeart;
 
     void Update()
     {
@@ -27,10 +27,12 @@ public class HealthController : MonoBehaviour
             {
                 hearts[i].sprite = fullHeart;
             }
+            /*
             else
             {
                 hearts[i].sprite = emptyHeart;
             }
+            */
 
             if (i < numOfHearts)
             {

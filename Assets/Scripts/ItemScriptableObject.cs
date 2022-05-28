@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+[CreateAssetMenu(fileName = "New Item", menuName = "ScriptableObjects/Item")]
 public class ItemScriptableObject : ScriptableObject
 {
 

@@ -4,16 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/*
+
 public class ChoosingSlotInventory : MonoBehaviour
 {
+    public Inventory inv;
     public Transform quickslotParent;
     public int currentQuickslotID = 0;
     public Sprite selectedSprite;
     public Sprite notSelectedSprite;
-    public Transform Destination;
-    public GameObject prefab;
+    //public Transform Destination;
+    public GameObject _prefab;
     public bool isChosen = false;
+    public GameObject currentWeapon;
 
 
 
@@ -52,34 +54,43 @@ public class ChoosingSlotInventory : MonoBehaviour
 
         }
         PickUp();
+        /*
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Drop();
+        }
+        */
     }
 
     public void PickUp()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (GameObject.Find("InventoryBack").active)
+            if (GameObjectExtension.Find("InventoryBack").active)
             {
-                if (quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item != null
-                    && quickslotParent.GetChild(currentQuickslotID).GetComponent<Image>().sprite == selectedSprite)
+                if (!quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().isEmpty
+                    && quickslotParent.GetChild(currentQuickslotID).GetComponent<Image>().sprite == selectedSprite &&
+                Convert.ToInt32(quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().itemAmount) > 0
+                    )
                 {
                     if (quickslotParent.GetChild(currentQuickslotID)
                         .GetComponent<InventorySlot>().item.prefab.tag == "TaskList")
                     {
-                        GameObject.Find("Canvas").transform.GetChild(0);
-                        Resources.FindObjectsOfTypeAll(Panel);
+                        GameObjectExtension.Find("TaskList").SetActive(true);
                     }
                     else
                     {
                         if (!isChosen)
                         {
+                        Debug.Log( Convert.ToInt32(quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().itemAmount));
                             DisplayItem();
                             isChosen = true;
                         }
                         else
                         {
-                            Destroy(prefab);
+                            Destroy(_prefab);
                             DisplayItem();
+                            isChosen = true;
                         }
                     }
                 }
@@ -89,17 +100,50 @@ public class ChoosingSlotInventory : MonoBehaviour
         }
     }
     void DisplayItem()
+    {
+        ItemScriptableObject item = quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item;
+        _prefab = item.prefab;
+        _prefab.GetComponent<Collider>().enabled = false;
+        _prefab.AddComponent(typeof(Rigidbody));
+        _prefab.GetComponent<Rigidbody>().isKinematic = true;
+        GameObject hands = GameObject.Find("Hands");
+        _prefab = Instantiate(_prefab);
+        /*
+        if (_prefab.CompareTag("ALohomora") | item.prefab.CompareTag("Totalus"))
         {
-            prefab = quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item.prefab;
-            prefab.GetComponent<Collider>().enabled = false;
-            prefab.AddComponent(typeof(Rigidbody));
-            prefab.GetComponent<Rigidbody>().isKinematic = true;
-            prefab.GetComponent<Rigidbody>().useGravity = false;
-            prefab.transform.position = Destination.position;
-            GameObject hands = GameObject.Find("Hands");
-            prefab = Instantiate(prefab);
-            prefab.transform.parent = hands.transform;
-            isChosen = true;
+            //   Destination.position = new Vector3(0.77f, -0.76f, 0.55f);
+            //_prefab.transform.position = Destination.position;
+            _prefab.transform.position = hands.transform.position;
+            _prefab.transform.parent = hands.transform;
+           _prefab.transform.eulerAngles = item.rotateAngle;
+           currentWeapon = _prefab;
         }
+        */
+        
+        {
+           // _prefab.transform.position = Destination.position;
+           _prefab.transform.position = hands.transform.position;
+            _prefab.transform.parent = hands.transform;
+            currentWeapon = null;
+
+        }
+        isChosen = true;
+        }
+    
+    /*
+    void Drop()
+    {
+        ItemScriptableObject item = quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item;
+        _prefab = item.prefab;
+        _prefab = Instantiate(_prefab);
+        if (!_prefab.CompareTag("ALohomora") && !_prefab.CompareTag("Totalus"))
+        {
+            _prefab.GetComponent<Collider>().enabled = true;
+            _prefab.GetComponent<Rigidbody>().isKinematic = false;
+            _prefab.GetComponent<Rigidbody>().useGravity = true;
+            _prefab.transform.parent = null;
+        }
+        inv.RemoveItem(_prefab);
+    }
+    */
 }
-*/

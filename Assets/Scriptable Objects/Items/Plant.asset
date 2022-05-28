@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f6505cbf08e66448df8970a9919a24, type: 3}
+  m_Name: Plant
+  m_EditorClassIdentifier: 
+  itemType: 0
+  name: Plant
+  maximumAmount: 1
+  description: 
+  icon: {fileID: 21300000, guid: 6592b916f86b19e428db6f6847c7b6dd, type: 3}
+  prefab: {fileID: 8867575478829943535, guid: b41c23170cb405c41b401be4da6b4ac9, type: 3}
+  rotateAngle: {x: 0, y: 0, z: 0}

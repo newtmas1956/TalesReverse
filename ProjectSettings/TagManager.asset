@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TaskList
+  - InventoryManager
+  - point
+  - Book
   layers:
   - Default
   - TransparentFX

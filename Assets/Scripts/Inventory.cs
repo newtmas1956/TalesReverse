@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
+
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject inventory;
+    public bool isActive;
     public Transform inventoryPanel; 
     public List<InventorySlot> slots = new List<InventorySlot>();
  //   private Camera mainCamera;
@@ -30,7 +32,13 @@ public class Inventory : MonoBehaviour
     
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.I))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            inventory.SetActive(true);
+                            isActive = true;
+        }
         Ray ray = Camera.main.ScreenPointToRay(point.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, richDistance))

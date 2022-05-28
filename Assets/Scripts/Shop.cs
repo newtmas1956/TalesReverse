@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 /*
+
 public class Shop : MonoBehaviour
 {
     public ScriptableObjectsChanger scriptableObjectsChanger;
     public Inventory inventory;
     public int appleAmount;
- 
+    public GameObject notifyPrefab;
+    public GameObject notifyBuyPrefab;
 
     public MagicSpell magicSpell;
 
@@ -26,9 +28,8 @@ public class Shop : MonoBehaviour
     {
         foreach (InventorySlot _slot in inventory.slots)
         {
-            if (_slot.item.itemType == ItemType.Apple)
+            if (_slot.item != null && _slot.item.itemType == ItemType.Apple)
             {
-                //appleAmount = Convert.ToInt32(_slot.itemAmount);
                 appleAmount = _slot.amount;
                 break;  
 
@@ -44,10 +45,20 @@ public class Shop : MonoBehaviour
                 {
                     _slot.amount -= magicSpell.spellPrice;
                     _slot.itemAmount.text = _slot.amount.ToString();
+                    Notify(notifyBuyPrefab);
                     break;
                 }
             }
         }
+        else
+        {
+            Notify(notifyPrefab);
+        }
+    }
+
+    public void Notify(GameObject objPrefab)
+    {
+        GameObjectExtension.Find(objPrefab.name).SetActive(true);
     }
 }
 */

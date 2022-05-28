@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
@@ -22,3 +23,4 @@ public class Player : MonoBehaviour
         inventory.Container.Clear();
     }
 }
+*/
