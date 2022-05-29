@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle.unity
     guid: 17f7a263cb036bc4aa121103f217b9d1
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: de4abf41caf74e74a8b6dfe33d5fee66
   m_configObjects: {}

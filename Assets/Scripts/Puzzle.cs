@@ -1,12 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class Puzzle : MonoBehaviour
 {
     public NumberBox boxPrefab;
 
     public NumberBox[,] boxes = new NumberBox[4, 4];
+    public int count=0;
 
     public Sprite[] sprites;
     void Start()
@@ -18,8 +23,14 @@ public class Puzzle : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+      
+    }
+
     void Init()
     {
+        
         int n = 0;
         for (int y = 3; y >= 0; y--)
         {
@@ -31,6 +42,7 @@ public class Puzzle : MonoBehaviour
                 n++;
             }
         }
+       
     }
 
     void ClickToSwap(int x, int y)
@@ -47,6 +59,7 @@ public class Puzzle : MonoBehaviour
         boxes[x + dx, y + dy] = from;
         from.UpdatePos(x + dx, y+dy);
         target.UpdatePos(x,y);
+        Finish();
     }
 
     int GetDx(int x, int y)
@@ -115,5 +128,37 @@ public class Puzzle : MonoBehaviour
     bool isRepeatMove(Vector2 pos)
     {
         return pos*-1 == lastMove;
+    }
+
+    void Finish()
+    {
+        int k = 0;
+ 
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                k++;
+                if (boxes[i, j].index == k && (i != 3 && j != 3))
+                {
+                    count++;
+                    if (count == 15)
+                    {
+                        SceneManager.LoadScene((SceneManager.GetActiveScene()).buildIndex + 1);
+                    }
+                }
+            }
+        }
+        
+        Debug.Log(count);
+        /*
+        
+        if (count == 15)
+        {
+            SceneManager.LoadScene((SceneManager.GetActiveScene()).buildIndex + 1);
+        }
+        */
+
+      //  count = 0;
     }
 }

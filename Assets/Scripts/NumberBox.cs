@@ -7,8 +7,8 @@ using UnityEngine.PlayerLoop;
 public class NumberBox : MonoBehaviour
 {
    public int index = 0;
-   private int x = 0;
-   private int y = 0;
+   public int x = 0;
+   public int y = 0;
 
    private Action<int, int> swapFunc = null;
    public void Init(int i, int j, int index, Sprite sprite, Action<int,int> swapFunc)

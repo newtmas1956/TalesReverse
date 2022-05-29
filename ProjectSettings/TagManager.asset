@@ -8,6 +8,7 @@ TagManager:
   - InventoryManager
   - point
   - Book
+  - Shop
   layers:
   - Default
   - TransparentFX
