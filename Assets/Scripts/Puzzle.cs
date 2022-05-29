@@ -17,7 +17,7 @@ public class Puzzle : MonoBehaviour
     void Start()
     {
         Init();
-        for (int i = 0; i < 999; i++)
+        for (int i = 0; i < 4; i++)
         {
             Shuffle();
         }
@@ -25,7 +25,7 @@ public class Puzzle : MonoBehaviour
 
     private void Update()
     {
-      
+        Finish();
     }
 
     void Init()
@@ -134,12 +134,12 @@ public class Puzzle : MonoBehaviour
     {
         int k = 0;
  
-        for (int i = 0; i < 4; i++)
+        for (int y = 3; y >= 0; y--)
         {
-            for (int j = 0; j < 4; j++)
+            for (int x = 0; x < 4; x++)
             {
                 k++;
-                if (boxes[i, j].index == k && (i != 3 && j != 3))
+                if (boxes[x, y].index == k)
                 {
                     count++;
                     if (count == 15)
@@ -159,6 +159,6 @@ public class Puzzle : MonoBehaviour
         }
         */
 
-      //  count = 0;
+        count = 0;
     }
 }
