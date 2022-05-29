@@ -142,7 +142,7 @@ public class Puzzle : MonoBehaviour
                 if (boxes[x, y].index == k)
                 {
                     count++;
-                    if (count == 15)
+                    if (count == 16)
                     {
                         SceneManager.LoadScene((SceneManager.GetActiveScene()).buildIndex + 1);
                     }

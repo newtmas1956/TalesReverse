@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/*
 
 public class Shop : MonoBehaviour
 {
@@ -13,13 +12,13 @@ public class Shop : MonoBehaviour
     public GameObject notifyPrefab;
     public GameObject notifyBuyPrefab;
 
-    public MagicSpell magicSpell;
+    public Mushroom mushroom;
 
     
 
     public void Update()
     {
-        magicSpell = (MagicSpell) scriptableObjectsChanger.scriptableObjects[scriptableObjectsChanger.currentIndex];
+        mushroom = (Mushroom) scriptableObjectsChanger.scriptableObjects[scriptableObjectsChanger.currentIndex];
        
        
     }
@@ -35,15 +34,15 @@ public class Shop : MonoBehaviour
 
             }
         }
-        if (magicSpell.spellPrice <= appleAmount)
+        if (mushroom.spellPrice <= appleAmount)
         {
-            inventory.AddItem(magicSpell, 1);
+            inventory.AddItem(mushroom, 1);
             
             foreach (InventorySlot _slot in inventory.slots)
             {
                 if (_slot.item.itemType == ItemType.Apple)
                 {
-                    _slot.amount -= magicSpell.spellPrice;
+                    _slot.amount -= mushroom.spellPrice;
                     _slot.itemAmount.text = _slot.amount.ToString();
                     Notify(notifyBuyPrefab);
                     break;
@@ -61,4 +60,3 @@ public class Shop : MonoBehaviour
         GameObjectExtension.Find(objPrefab.name).SetActive(true);
     }
 }
-*/

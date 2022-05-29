@@ -1,1 +1,1 @@
-﻿public enum ItemType {Default, MagicSpell, Apple}
+﻿public enum ItemType {Default, Mushroom, Apple}

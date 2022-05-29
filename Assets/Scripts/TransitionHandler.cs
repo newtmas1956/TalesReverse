@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransitionHandler : MonoBehaviour
 {
     private Animator animator;
-    public string nextScene ="";
+    private string nextScene;
     [SerializeField] public bool disableFadeInAnimation = false;
 
     public void Start()
@@ -26,24 +26,21 @@ public class TransitionHandler : MonoBehaviour
         {
             nextScene = "Puzzle";
         }
-        /*
-        else 
-        if (SceneManager.GetActiveScene().name.Equals("HallScene") && GameObjectExtension.Find("CookButton").activeInHierarchy)
+        else
+        if (SceneManager.GetActiveScene().name.Equals("Forest") &&  GameObjectExtension.Find("EnterButton").activeInHierarchy)
         {
-           Debug.Log("Yeee");
-            nextScene = "Menu";
+            nextScene = "Hut";
         }
-        else if (SceneManager.GetActiveScene().name.Equals("HogwartsScene"))
+        if (SceneManager.GetActiveScene().name.Equals("Puzzle"))
         {
-            nextScene = "HallScene";
+            GameObjectExtension.Find("OpenBookButton").SetActive(false);
         }
-        */
     }
 
     public void LoadNextScene()
     {
-      
-     
+
+        
         animator.Play("FadeOut", -1, 0);
      
 

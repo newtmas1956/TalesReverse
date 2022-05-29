@@ -9,6 +9,8 @@ TagManager:
   - point
   - Book
   - Shop
+  - Notify
+  - ShopPanel
   layers:
   - Default
   - TransparentFX
