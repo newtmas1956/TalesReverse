@@ -14,19 +14,23 @@ public class DialogueUI : MonoBehaviour
     private DialogueObject testDialogue;
 
     private ResponseHandler responseHandler;
+    [SerializeField]
+    private bool showAtStart = false;
 
     private void Start()
     {
         typewriter = GetComponent<TypeWriter>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogue();
-        ShowDialogue(testDialogue);
+        if (showAtStart)
+            ShowDialogue(testDialogue);
     }
 
     public void ShowDialogue(DialogueObject dialogueObj)
     {
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughtDialogue(dialogueObj));
+        Cursor.visible = true;
     }
 
     private IEnumerator StepThroughtDialogue(DialogueObject dialogueObj)
@@ -39,7 +43,7 @@ public class DialogueUI : MonoBehaviour
 
             if (i == dialogueObj.Dialogue.Length - 1 && dialogueObj.HasResponses)
                 break;
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         }
         if (dialogueObj.HasResponses)
             responseHandler.ShowResponses(dialogueObj.Responses);
@@ -51,6 +55,7 @@ public class DialogueUI : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        Cursor.visible = false;
     }
 
 }
