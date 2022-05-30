@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -147,18 +147,31 @@ public class Inventory : MonoBehaviour
         questMushrooms = 0;   
         for (int i = 0; i < 5; i++)
         {
+            /*
             if (slots[i].amount >= 5)
             {
                 questMushrooms = 2;
             }
-            //if ((slots[i].item == Mushroom1) || (slots[i].item == Mushroom2))
-            //{
-            //    questMushrooms++;
-            //    Debug.Log("грибобас найден");
-            //}
+            */
+            if ((slots[i].item == Mushroom1) || (slots[i].item == Mushroom2))
+            {
+                questMushrooms++;
+                Debug.Log("грибобас найден");
+            }
         }
+
         if (questMushrooms >= 2)
+        {
+            GameObject.Find("Shop").SetActive(false);
+            GameObject.Find("ShopButton").SetActive(false);
+            GameObject.Find("SpeakButton").SetActive(false);
             GameObjectExtension.Find("HasMushs").SetActive(true);
+            Debug.Log("ААААААААА");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        GameObjectExtension.Find("HasMushs").SetActive(true);
+        
     }
 
 }

@@ -31,6 +31,7 @@ public class TransitionHandler : MonoBehaviour
         {
             Debug.Log("HasMushs найден и мы в лесу!");
             nextScene = "Hut";
+            LoadNextScene();
         }
         if (SceneManager.GetActiveScene().name.Equals("Puzzle"))
         {
@@ -41,7 +42,7 @@ public class TransitionHandler : MonoBehaviour
     public void LoadNextScene()
     {
 
-        
+        Debug.Log(nextScene);
         animator.Play("FadeOut", -1, 0);
      
 

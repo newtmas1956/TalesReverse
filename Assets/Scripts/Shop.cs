@@ -59,4 +59,11 @@ public class Shop : MonoBehaviour
     {
         GameObjectExtension.Find(objPrefab.name).SetActive(true);
     }
+    
+    public void DisplayShop()
+    {
+        Debug.Log("открыто");
+        // GameObjectExtension.FindGameObjectWithTag("ShopPanel").SetActive(true);
+        GameObjectExtension.Find("Shop").SetActive(true);
+    }
 }
