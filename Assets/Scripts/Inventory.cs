@@ -15,6 +15,10 @@ public class Inventory : MonoBehaviour
  //   private Camera mainCamera;
     private GameObject point;
     public float richDistance = 15f;
+    public ItemScriptableObject Mushroom1;
+    public ItemScriptableObject Mushroom2;
+    public ItemScriptableObject Apple;
+    public int questMushrooms = 0;
      
     void Start()
     {
@@ -45,10 +49,10 @@ public class Inventory : MonoBehaviour
         {
           if (Input.GetKeyDown(KeyCode.F))
           {
-              Debug.Log("Кнопка нажата)");
+              //Debug.Log("Кнопка нажата)");
                 if (hit.collider.gameObject.GetComponent<Item>() != null)
                 {
-                    Debug.Log("Луч работает");
+                    //Debug.Log("Луч работает");
                     AddItem(hit.collider.gameObject.GetComponent<Item>().item, hit.collider.gameObject.GetComponent<Item>().amount);
                     Destroy(hit.collider.gameObject);
                    
@@ -56,6 +60,7 @@ public class Inventory : MonoBehaviour
           }
 
         }
+        HasMushroom();
     }
 
     public void AddItem(ItemScriptableObject _item, int _amount)
@@ -135,6 +140,25 @@ public class Inventory : MonoBehaviour
                 slots[i].itemAmount.text = "";
             }
         }
+    }
+
+    public void HasMushroom()
+    {
+        questMushrooms = 0;   
+        for (int i = 0; i < 5; i++)
+        {
+            if (slots[i].amount >= 5)
+            {
+                questMushrooms = 2;
+            }
+            //if ((slots[i].item == Mushroom1) || (slots[i].item == Mushroom2))
+            //{
+            //    questMushrooms++;
+            //    Debug.Log("грибобас найден");
+            //}
+        }
+        if (questMushrooms >= 2)
+            GameObjectExtension.Find("HasMushs").SetActive(true);
     }
 
 }

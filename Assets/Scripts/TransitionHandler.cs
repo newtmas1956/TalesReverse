@@ -26,9 +26,10 @@ public class TransitionHandler : MonoBehaviour
         {
             nextScene = "Puzzle";
         }
-        else
-        if (SceneManager.GetActiveScene().name.Equals("Forest") &&  GameObjectExtension.Find("EnterButton").activeInHierarchy)
+        //if (SceneManager.GetActiveScene().name.Equals("Forest") &&  GameObjectExtension.Find("EnterButton").activeInHierarchy)
+        if (SceneManager.GetActiveScene().name.Equals("Forest") && GameObjectExtension.Find("HasMushs").activeInHierarchy)
         {
+            Debug.Log("HasMushs найден и мы в лесу!");
             nextScene = "Hut";
         }
         if (SceneManager.GetActiveScene().name.Equals("Puzzle"))
