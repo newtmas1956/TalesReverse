@@ -11,14 +11,17 @@ public class ShopPlantController : MonoBehaviour
   
     private void Update()
     {
+        
         if (this.CompareTag("Shop"))
         {
             if (Vector3.Distance(this.transform.position, player.transform.position) < reachDistance)
             
             {
-                GameObjectExtension.Find("ShopButton").SetActive(true); 
+                Debug.Log("подошли");
+               
+               GameObjectExtension.Find("ShopButton").SetActive(true); 
                 GameObjectExtension.Find("SpeakButton").SetActive(true); 
-                
+
             }
             else
             {
